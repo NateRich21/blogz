@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    p {
+        color: red;
+    }
+    #description {
+        text-align: center;
+    }
+    input[type=textarea] {
+        width: 15%;
+        height: 90px;
+    }
+    .label {
+        padding-bottom: 20px;
+    }
+</style>
+    <h1 id='description'>Add a Blog Entry</h1>
+    <form method='post'>
+        <label class='label'>
+            Title for your new blog entry:<br>
+            <input type="text" name='title' value='{{entry_title}}' /><p>{{title_error}}</p>
+        </label>
+        <br>
+        <label class='label'>
+            Your new blog:<br>
+            <input type="textarea" name='post' value='{{post}}' /><p>{{post_error}}</p>
+        </label>
+        <input type="submit" value='Post Entry' />
+    </form>
+{% endblock %}

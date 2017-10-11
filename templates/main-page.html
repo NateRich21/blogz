@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    ul {
+        list-style-type: none;
+    }
+    #build {
+        text-align: center
+    }
+
+</style>
+
+<h1 id='build' >Build a Blog</h1>
+<br>
+
+{% if entries|length == 0 %}
+    <p>No entries yet</p>
+    {% else %}
+
+        <ul>
+            {% for entry in entries %}
+            <li><h1><a href="/entry?entry_id={{entry.id}}">{{entry.title}}</a></h1>
+            <br>{{entry.post}}</li>
+            <hr />
+            {% endfor %}
+        </ul>
+
+    {% endif %}
+
+{% endblock %}
+
