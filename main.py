@@ -66,19 +66,6 @@ def display_post():
 
     return render_template('post.html', entry=entry)
 
-"""@app.route('/entry')
-def display_post():
-    title = request.args.get('title')
-    post = request.args.get('post')
-    entry_id = request.args.get('id')
-
-    if entry_id != '':
-        entry = Entry.query.get(entry_id)
-
-    return render_template('post.html')#, title=title, post=post)"""
-
-
-
 
 if __name__ == '__main__':
     app.run()   
