@@ -2,13 +2,22 @@
 <html>
     <head>
         <style>
-            #entry_link {
+            .nav_link {
                 padding-left: 10px
             }
+            .error {
+                color: red;
+            }
         </style>
-        <header><a href="/blog">Main Blog Page</a><a id='entry_link' href="/newpost">Add a Blog Entry</a></header>
-        <title>{{title}}</title>
     </head>
+        <header>
+            <a href="/">Home</a>
+            <a class="nav_link" href="/blog">All Posts</a>
+            <a class="nav_link" href="/newpost">New Post</a>
+            <a class="nav_link" href="/login">Login</a>
+            <a class="nav_link" href="/logout">Logout</a>
+        </header>   
+        <title>{{title}}</title>
 <body>
 
     {% block content %}

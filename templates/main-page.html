@@ -18,14 +18,23 @@
     <p>No entries yet</p>
     {% else %}
 
-        <ul>
-            {% for entry in entries %}
-            <li><h1><a href="/entry?entry_id={{entry.id}}">{{entry.title}}</a></h1>
-            <br>{{entry.post}}</li>
-            <hr />
-            {% endfor %}
-        </ul>
-
+        {%if not entry_id %}
+            <ul>
+                {% for entry in entries %}
+                <li><h1><a href="/blog?entry_id={{entry.id}}">{{entry.title}}</a></h1>
+                <br>{{entry.post}}</li><br>
+                <p><em>Written by</em><a href="/blog?user_id={{entry.owner_id}}"> {{entry.owner.username}}</a></p>
+                <hr />
+                {% endfor %}
+            </ul>
+            {% else %}
+                <ul>
+                    {% for entry in entries %}
+                    <li><h1>{{entry.title}}</a></h1>
+                    <br>{{entry.post}}</li>
+                    {% endfor %}
+                </ul>
+        {% endif %}
     {% endif %}
 
 {% endblock %}
